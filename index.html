@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atelier Épure — Sites de restaurants qui se trouvent et qui font réserver</title>
+<meta name="description" content="Studio belge de sites vitrines sur-mesure pour restaurants indépendants. Trouvable sur Google, rapide, pensé pour faire réserver. Chaque page est dessinée, pas générée à la chaîne.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Hanken+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Charte de marque — Palette C « Ocre doux » (tokens --ae-*) -->
+<link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- =================== CURSEUR / GRAIN =================== -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- =================== NAV =================== -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__brand">
+    <span class="wordmark">Atelier&nbsp;<span class="ac">É</span>pure</span>
+  </a>
+  <nav class="nav__links" aria-label="Navigation principale">
+    <a href="#methode">Méthode</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#tarifs">Tarifs</a>
+  </nav>
+  <a href="#contact" class="nav__cta mono">Réserver un appel <span class="dot"></span></a>
+  <button class="nav__burger" id="burger" aria-label="Ouvrir le menu"><span></span><span></span></button>
+</header>
+
+<!-- =================== HERO D'INTRO (fond WebGL — nébuleuse) =================== -->
+<section class="intro" id="accueil" aria-label="Atelier Épure — introduction">
+  <canvas id="intro-canvas" aria-hidden="true"></canvas>
+
+  <div class="intro__inner">
+    <p class="intro__badge mono">
+      <span class="star" aria-hidden="true">✦</span>
+      <span>Studio belge · Sur rendez-vous · 2026</span>
+    </p>
+
+    <h1 class="intro__title">
+      Des sites de restaurant<br>
+      taillés <em>à la main</em>.
+    </h1>
+
+    <p class="intro__lede">
+      Un seul artisan, une méthode de studio, zéro template. Des vitrines
+      sur-mesure qui se trouvent sur Google et qui font réserver.
+    </p>
+
+    <div class="intro__actions">
+      <a href="#realisations" class="btn btn-accent btn-lg">Voir les réalisations</a>
+      <a href="#contact" class="btn btn-onlight btn-lg">Réserver un appel</a>
+    </div>
+  </div>
+
+  <a href="#top" class="intro__scroll mono" aria-label="Défiler vers le contenu">
+    <span>Découvrir</span>
+    <span class="bar" aria-hidden="true"></span>
+  </a>
+</section>
+
+<!-- =================== HERO =================== -->
+<main id="top">
+<section class="hero" id="hero">
+  <div class="hero__meta mono reveal">
+    <span>Studio · Sites de restaurants</span>
+    <span>Bruxelles, BE · Est. 2026</span>
+  </div>
+
+  <h2 class="hero__title">
+    <span class="line reveal-line"><span>Le site qui</span></span>
+    <span class="line reveal-line">
+      <span class="chip" aria-hidden="true">
+        <img src="assets/hero-table.jpg" alt="">
+      </span>
+      <span>remplit</span>
+    </span>
+    <span class="line reveal-line"><span>votre <em>salle</em>.</span></span>
+  </h2>
+
+  <div class="hero__bottom">
+    <p class="hero__lede reveal">
+      Sites vitrines sur-mesure pour restaurants indépendants belges.
+      Trouvable sur Google, rapide comme l'éclair, et pensé pour une seule chose&nbsp;: faire réserver.
+    </p>
+    <div class="hero__actions reveal">
+      <a href="#realisations" class="btn btn-solid">Voir le portfolio</a>
+      <a href="#contact" class="btn btn-ghost">Réserver un appel</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll mono" aria-hidden="true">Défiler &nbsp;↓</div>
+</section>
+
+<!-- =================== MARQUEE TRUST =================== -->
+<div class="marquee marquee--top" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Trouvable sur Google</span><span class="sep">—</span>
+    <span>Réservation directe</span><span class="sep">—</span>
+    <span>FR · EN · NL</span><span class="sep">—</span>
+    <span>Chargé en un instant</span><span class="sep">—</span>
+    <span>Un seul resto par quartier</span><span class="sep">—</span>
+    <span>Trouvable sur Google</span><span class="sep">—</span>
+    <span>Réservation directe</span><span class="sep">—</span>
+    <span>FR · EN · NL</span><span class="sep">—</span>
+    <span>Chargé en un instant</span><span class="sep">—</span>
+    <span>Un seul resto par quartier</span><span class="sep">—</span>
+  </div>
+</div>
+
+<!-- =================== [01] MANIFESTE =================== -->
+<section class="manifeste" id="apropos">
+  <div class="section-head">
+    <span class="num mono">[01]</span>
+    <span class="label mono">Le studio</span>
+  </div>
+
+  <h2 class="kinetic" data-kinetic>
+    Chaque page est <em>dessinée</em>, pas générée à la chaîne. Un seul artisan, une méthode de studio, une exigence qui se voit au premier coup d'œil.
+  </h2>
+
+  <div class="manifeste__grid">
+    <figure class="manifeste__img reveal">
+      <img src="assets/atelier-1.jpg" alt="Détail d'un site de restaurant dessiné par Atelier Épure">
+      <figcaption class="mono">Travail sur-mesure · pas de template</figcaption>
+    </figure>
+    <div class="manifeste__text reveal">
+      <p>La plupart des restaurants indépendants ont un site qui les dessert&nbsp;: lent, illisible sur mobile, invisible sur Google, impossible à mettre à jour.</p>
+      <p>Atelier Épure ne fait qu'une chose, et la fait bien&nbsp;: des sites vitrines qui mettent votre cuisine en valeur, vous rendent trouvables, et transforment les visiteurs en réservations.</p>
+      <p class="manifeste__sign serif">— Sobriété d'atelier, soin du détail, zéro générique.</p>
+    </div>
+    <figure class="manifeste__img manifeste__img--tall reveal">
+      <img src="assets/atelier-2.jpg" alt="Page de réservation d'un site Atelier Épure">
+      <figcaption class="mono">Pensé pour la réservation</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- =================== [02] SERVICES =================== -->
+<section class="services" id="services">
+  <div class="section-head">
+    <span class="num mono">[02]</span>
+    <span class="label mono">Ce qu'on installe</span>
+  </div>
+
+  <ul class="svc-list">
+    <li class="svc reveal">
+      <span class="svc__no mono">01</span>
+      <span class="svc__title serif">Site vitrine sur-mesure</span>
+      <span class="svc__desc">Dessiné autour de votre lieu, votre carte, votre ambiance. Rapide, impeccable sur mobile.</span>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc reveal">
+      <span class="svc__no mono">02</span>
+      <span class="svc__title serif">Réservation directe</span>
+      <span class="svc__desc">Widget TheFork ou réservation intégrée. Vos couverts, sans commission d'intermédiaire.</span>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc reveal">
+      <span class="svc__no mono">03</span>
+      <span class="svc__title serif">SEO local & Google</span>
+      <span class="svc__desc">Fiche Google Business optimisée, mots-clés de quartier. On vous rend enfin trouvable.</span>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc reveal">
+      <span class="svc__no mono">04</span>
+      <span class="svc__title serif">Multilingue FR · EN · NL</span>
+      <span class="svc__desc">Indispensable en Belgique. Vos clients lisent votre carte dans leur langue.</span>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc reveal">
+      <span class="svc__no mono">05</span>
+      <span class="svc__title serif">Galerie & menu interactif</span>
+      <span class="svc__desc">Vos plats mis en scène, votre carte toujours à jour, sans PDF qui pèse trois tonnes.</span>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+    <li class="svc reveal">
+      <span class="svc__no mono">06</span>
+      <span class="svc__title serif">Tranquillité & maintenance</span>
+      <span class="svc__desc">Hébergement, sauvegardes, mises à jour. Vous cuisinez, on s'occupe du reste.</span>
+      <span class="svc__arrow" aria-hidden="true">→</span>
+    </li>
+  </ul>
+</section>
+
+<!-- =================== [03] RÉALISATIONS (sombre) =================== -->
+<section class="works" id="realisations">
+  <div class="section-head section-head--dark">
+    <span class="num mono">[03]</span>
+    <span class="label mono">Réalisations</span>
+  </div>
+
+  <p class="works__intro kinetic kinetic--light" data-kinetic>
+    Trois sites de démonstration, un par formule. Cliquez pour les ouvrir. Le vôtre sera unique, jamais un calque.
+  </p>
+
+  <div class="works__grid">
+
+    <a href="https://mathisleclercq000-dot.github.io/demo-la-brassine/" target="_blank" rel="noopener" class="work reveal">
+      <div class="work__media">
+        <span class="work__offre mono">Formule Essentiel</span>
+        <img src="assets/work-brassine.jpg" alt="Site de La Brassine — démonstration de la formule Essentiel">
+      </div>
+      <div class="work__meta">
+        <span class="serif">La Brassine</span>
+        <span class="mono">Brasserie · bières & cuisine</span>
+      </div>
+      <span class="work__go mono">Voir le site ↗</span>
+    </a>
+
+    <a href="https://mathisleclercq000-dot.github.io/demo-comal/" target="_blank" rel="noopener" class="work reveal">
+      <div class="work__media">
+        <span class="work__offre mono">Formule Signature</span>
+        <img src="assets/work-comal.jpg" alt="Site de Comal — démonstration de la formule Signature">
+      </div>
+      <div class="work__meta">
+        <span class="serif">Comal</span>
+        <span class="mono">Cuisine mexicaine · FR/EN/NL</span>
+      </div>
+      <span class="work__go mono">Voir le site ↗</span>
+    </a>
+
+    <a href="https://mathisleclercq000-dot.github.io/demo-racines/" target="_blank" rel="noopener" class="work reveal">
+      <div class="work__media">
+        <span class="work__offre mono">Formule Premium</span>
+        <img src="assets/work-racines.jpg" alt="Site de Racines — démonstration de la formule Premium">
+      </div>
+      <div class="work__meta">
+        <span class="serif">Racines</span>
+        <span class="mono">Cuisine végétale de saison</span>
+      </div>
+      <span class="work__go mono">Voir le site ↗</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- =================== [04] TARIFS =================== -->
+<section class="tarifs" id="tarifs">
+  <div class="section-head">
+    <span class="num mono">[04]</span>
+    <span class="label mono">Tarifs</span>
+  </div>
+  <p class="tarifs__lede serif">Trois formules claires. Un acompte, puis un forfait mensuel qui couvre l'hébergement, la maintenance et votre tranquillité.</p>
+
+  <div class="tarifs__grid">
+    <!-- Essentiel -->
+    <article class="plan reveal">
+      <header class="plan__head">
+        <h3 class="serif">Essentiel</h3>
+        <p class="mono">Être en ligne, proprement</p>
+      </header>
+      <div class="plan__price">
+        <span class="amount serif">990&nbsp;€</span>
+        <span class="mono">+ 49&nbsp;€/mois</span>
+      </div>
+      <ul class="plan__feats">
+        <li>Site vitrine sur-mesure (une page)</li>
+        <li>Mobile impeccable & rapide</li>
+        <li>Fiche Google Business</li>
+        <li>Formulaire de contact</li>
+        <li>Hébergement & maintenance</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost plan__cta">Choisir Essentiel</a>
+    </article>
+
+    <!-- Signature (mise en avant) -->
+    <article class="plan plan--featured reveal">
+      <span class="plan__badge mono">Le plus choisi</span>
+      <header class="plan__head">
+        <h3 class="serif">Signature</h3>
+        <p class="mono">Le standard Atelier Épure</p>
+      </header>
+      <div class="plan__price">
+        <span class="amount serif">2&nbsp;200&nbsp;€</span>
+        <span class="mono">+ 89&nbsp;€/mois</span>
+      </div>
+      <ul class="plan__feats">
+        <li>Tout l'Essentiel, en plusieurs pages</li>
+        <li>Identité visuelle & design dédié</li>
+        <li>Réservation directe (TheFork / widget)</li>
+        <li>Multilingue FR · EN · NL</li>
+        <li>SEO local approfondi</li>
+        <li>Galerie & menu interactif</li>
+      </ul>
+      <a href="#contact" class="btn btn-accent plan__cta">Choisir Signature</a>
+    </article>
+
+    <!-- Premium -->
+    <article class="plan reveal">
+      <header class="plan__head">
+        <h3 class="serif">Premium</h3>
+        <p class="mono">L'expérience complète</p>
+      </header>
+      <div class="plan__price">
+        <span class="amount serif">3&nbsp;800&nbsp;€</span>
+        <span class="mono">+ 199&nbsp;€/mois</span>
+      </div>
+      <ul class="plan__feats">
+        <li>Tout Signature, sans limite de pages</li>
+        <li>Blog & contenus éditoriaux</li>
+        <li>Carte interactive & évènements</li>
+        <li>Suivi & optimisation continue</li>
+        <li>Priorité sur les demandes</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost plan__cta">Choisir Premium</a>
+    </article>
+  </div>
+</section>
+
+<!-- =================== [05] GARANTIE =================== -->
+<section class="garantie" id="garantie">
+  <div class="section-head">
+    <span class="num mono">[05]</span>
+    <span class="label mono">L'engagement</span>
+  </div>
+  <div class="garantie__inner">
+    <p class="garantie__big serif">
+      Satisfait, ou <span class="ac">on ajuste</span> jusqu'à validation.
+    </p>
+    <p class="garantie__sub">
+      Vous ne payez pas pour une promesse. On travaille à partir d'une maquette validée, et on n'arrête d'ajuster que lorsque le résultat vous ressemble. Le code du site est <strong>à vous</strong>, sans dépendance ni rançon.
+    </p>
+    <div class="garantie__pills">
+      <span class="mono">Maquette d'abord</span>
+      <span class="mono">Code possédé</span>
+      <span class="mono">Un seul resto par quartier</span>
+      <span class="mono">Réponse sous 48h</span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== [06] MÉTHODE =================== -->
+<section class="methode" id="methode">
+  <div class="section-head">
+    <span class="num mono">[06]</span>
+    <span class="label mono">La méthode</span>
+  </div>
+
+  <div class="steps">
+    <article class="step reveal">
+      <span class="step__no mono">01</span>
+      <h3 class="serif">Conversation</h3>
+      <p>Un appel pour comprendre votre lieu, votre carte, vos clients. On regarde ce qui vous freine aujourd'hui.</p>
+    </article>
+    <article class="step reveal">
+      <span class="step__no mono">02</span>
+      <h3 class="serif">Maquette</h3>
+      <p>Vous voyez une démo de votre futur site avant tout engagement. On ajuste jusqu'à ce que ça vous plaise.</p>
+    </article>
+    <article class="step reveal">
+      <span class="step__no mono">03</span>
+      <h3 class="serif">Mise en ligne</h3>
+      <p>Textes, photos, réservation, langues, Google. On livre un site fini, rapide, prêt à recevoir des clients.</p>
+    </article>
+    <article class="step reveal">
+      <span class="step__no mono">04</span>
+      <h3 class="serif">Tranquillité</h3>
+      <p>On s'occupe de l'hébergement, des mises à jour et des petits changements. Vous gardez la main sur l'essentiel.</p>
+    </article>
+  </div>
+</section>
+
+<!-- =================== [07] FAQ =================== -->
+<section class="faq" id="faq">
+  <div class="section-head">
+    <span class="num mono">[07]</span>
+    <span class="label mono">Questions</span>
+  </div>
+
+  <div class="faq__list">
+    <details class="qa">
+      <summary><span class="serif">Combien de temps pour être en ligne ?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+      <p>Comptez deux à trois semaines pour un site Signature, une fois vos textes et photos réunis. La maquette, elle, arrive en quelques jours.</p>
+    </details>
+    <details class="qa">
+      <summary><span class="serif">Je n'ai pas de belles photos, c'est un problème ?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+      <p>On vous guide pour les prendre vous-même proprement, ou on organise une séance. Un site de restaurant vit par ses images — on ne les laisse pas au hasard.</p>
+    </details>
+    <details class="qa">
+      <summary><span class="serif">Est-ce que je possède vraiment le site ?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+      <p>Oui. Le code vous appartient, sans plateforme propriétaire qui vous tient en otage. Le forfait mensuel couvre l'hébergement et la maintenance, pas une location de votre propre site.</p>
+    </details>
+    <details class="qa">
+      <summary><span class="serif">Pourquoi un seul restaurant par quartier ?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+      <p>Parce qu'on ne veut pas faire travailler votre site contre celui d'un voisin qu'on aurait aussi conçu. L'exclusivité locale, c'est votre avantage.</p>
+    </details>
+    <details class="qa">
+      <summary><span class="serif">Et si je veux changer des choses plus tard ?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+      <p>Les petits changements sont inclus dans le forfait. Pour les évolutions plus importantes, on en discute — pas de surprise, pas de devis surprise.</p>
+    </details>
+  </div>
+</section>
+
+<!-- =================== CTA FINAL =================== -->
+<section class="cta" id="contact">
+  <div class="marquee marquee--cta" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="serif">Remplissons votre salle</span><span class="sep ac">·</span>
+      <span class="serif">Remplissons votre salle</span><span class="sep ac">·</span>
+      <span class="serif">Remplissons votre salle</span><span class="sep ac">·</span>
+      <span class="serif">Remplissons votre salle</span><span class="sep ac">·</span>
+    </div>
+  </div>
+
+  <div class="cta__inner">
+    <h2 class="cta__title serif reveal">Parlons de<br>votre <em>restaurant</em>.</h2>
+    <p class="cta__sub reveal">Un appel de quinze minutes, sans engagement. On regarde ensemble ce qu'un bon site changerait pour vous.</p>
+    <div class="cta__actions reveal">
+      <a href="mailto:bonjour@atelierepure.be" class="btn btn-solid btn-lg">bonjour@atelierepure.be</a>
+      <a href="#tarifs" class="btn btn-ghost btn-lg">Revoir les tarifs</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="footer__marquee" aria-hidden="true">
+    <div class="marquee__track footer__big">
+      <span>Atelier Épure</span><span class="sep ac">é.</span>
+      <span>Atelier Épure</span><span class="sep ac">é.</span>
+      <span>Atelier Épure</span><span class="sep ac">é.</span>
+    </div>
+  </div>
+  <div class="footer__cols">
+    <div class="footer__col">
+      <span class="mono">Studio · Sites de restaurants</span>
+      <span class="mono">Bruxelles, BE · Est. 2026</span>
+    </div>
+    <div class="footer__col">
+      <a href="mailto:bonjour@atelierepure.be" class="mono">bonjour@atelierepure.be</a>
+      <a href="https://atelierepure.be" class="mono">atelierepure.be</a>
+    </div>
+    <div class="footer__col footer__col--end">
+      <span class="mono">© 2026 Atelier Épure</span>
+      <span class="mono">Palette C — Ocre doux</span>
+    </div>
+  </div>
+</footer>
+
+<script src="intro.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

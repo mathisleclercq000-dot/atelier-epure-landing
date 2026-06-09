@@ -1,0 +1,158 @@
+/* ============================================================================
+   ATELIER ÉPURE — Design Tokens
+   Palette C · « Ocre doux »
+   ----------------------------------------------------------------------------
+   Fichier importable unique. Deux façons de l'utiliser :
+
+   1) Lien direct dans le <head> :
+      <link rel="stylesheet" href="atelier-epure-palette-c.css">
+
+   2) Import CSS :
+      @import url("atelier-epure-palette-c.css");
+
+   Les polices Google Fonts sont importées ci-dessous. Si tu préfères les
+   charger toi-même via <link>, supprime la ligne @import et garde le reste.
+   ============================================================================ */
+
+/* Polices chargées via <link> dans le <head> de index.html (plus rapide que @import). */
+
+:root {
+  /* --- COULEURS ----------------------------------------------------------
+     L'ocre est un ACCENT : viser ~5 % de la surface (CTA, 1 mot, filets,
+     prix). Ne jamais l'utiliser en grand aplat. */
+  --ae-papier:        #F7F4EE;  /* fond principal — blanc cassé chaud        */
+  --ae-papier-2:      #EFEAE1;  /* fond secondaire — cartes, cartouches      */
+  --ae-encre:         #1C1A17;  /* texte & traits — presque-noir chaud       */
+  --ae-encre-60:      #5A554E;  /* texte secondaire / légendes               */
+  --ae-ocre:          #B68A3E;  /* accent unique — doré solaire              */
+  --ae-ocre-fonce:    #9A7330;  /* hover / texte ocre sur fond clair (AA)    */
+
+  /* Canaux RGB pour composer des transparences :
+     ex. rgba(var(--ae-encre-rgb), .16) */
+  --ae-papier-rgb:    247 244 238;
+  --ae-encre-rgb:     28 26 23;
+  --ae-ocre-rgb:      182 138 62;
+
+  /* Dérivés utiles */
+  --ae-hair:          rgb(var(--ae-encre-rgb) / .16);  /* filet fin         */
+  --ae-hair-fort:     rgb(var(--ae-encre-rgb) / .30);  /* filet appuyé      */
+  --ae-ocre-soft:     rgb(var(--ae-ocre-rgb) / .14);   /* halo / fond léger */
+
+  /* --- TYPOGRAPHIE -------------------------------------------------------- */
+  --ae-font-display:  "Fraunces", Georgia, "Times New Roman", serif;
+  --ae-font-corps:    "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  --ae-font-mono:     "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --ae-poids-display: 340;      /* Fraunces : volontairement léger            */
+  --ae-poids-corps:   400;
+  --ae-poids-corps-md:500;
+  --ae-poids-mono:    700;
+
+  /* Échelle de tailles (fluide) */
+  --ae-t-hero:   clamp(3rem, 8vw, 6.6rem);
+  --ae-t-h2:     clamp(2rem, 4.2vw, 3.1rem);
+  --ae-t-h3:     clamp(1.5rem, 3vw, 2.2rem);
+  --ae-t-corps:  1.02rem;
+  --ae-t-petit:  .86rem;
+  --ae-t-label:  .72rem;        /* eyebrows / méta en mono                    */
+
+  /* Détails typo signature */
+  --ae-tracking-titre: -.015em; /* serres légèrement les grands titres        */
+  --ae-tracking-label: .18em;   /* étire les labels mono en capitales         */
+  --ae-interligne:     1.5;
+
+  /* --- FORME & ESPACE ----------------------------------------------------- */
+  --ae-radius:       0px;       /* épure = angles francs, pas d'arrondi        */
+  --ae-bordure:      1px solid var(--ae-encre);
+  --ae-bordure-fine: 1px solid var(--ae-hair);
+  --ae-rythme:       clamp(28px, 6vw, 90px); /* marge de page / gouttière      */
+}
+
+/* ============================================================================
+   CLASSES UTILITAIRES (optionnelles)
+   Préfixe `ae-` pour éviter toute collision avec Tailwind ou ton CSS.
+   ============================================================================ */
+
+.ae-serif { font-family: var(--ae-font-display); font-weight: var(--ae-poids-display); }
+.ae-corps { font-family: var(--ae-font-corps);   font-weight: var(--ae-poids-corps); }
+
+.ae-mono {
+  font-family: var(--ae-font-mono);
+  font-weight: var(--ae-poids-mono);
+  font-size: var(--ae-t-label);
+  letter-spacing: var(--ae-tracking-label);
+  text-transform: uppercase;
+  color: var(--ae-encre-60);
+}
+
+/* Couleurs de texte */
+.ae-c-encre   { color: var(--ae-encre); }
+.ae-c-muted   { color: var(--ae-encre-60); }
+.ae-c-ocre    { color: var(--ae-ocre); }
+
+/* Fonds */
+.ae-bg-papier   { background: var(--ae-papier); }
+.ae-bg-papier-2 { background: var(--ae-papier-2); }
+.ae-bg-encre    { background: var(--ae-encre); color: var(--ae-papier); }
+.ae-bg-ocre     { background: var(--ae-ocre);  color: var(--ae-encre); }
+
+/* Filet de section (le « trait ») */
+.ae-filet      { border: none; border-top: var(--ae-bordure-fine); }
+.ae-filet-fort { border: none; border-top: var(--ae-bordure); }
+
+/* --- BOUTONS --------------------------------------------------------------
+   3 niveaux : plein (neutre), fantôme (secondaire), accent (CTA principal). */
+.ae-btn {
+  display: inline-block;
+  font-family: var(--ae-font-corps);
+  font-weight: var(--ae-poids-corps-md);
+  font-size: .92rem;
+  letter-spacing: .01em;
+  padding: 14px 26px;
+  border: 1px solid var(--ae-encre);
+  border-radius: var(--ae-radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+.ae-btn--plein   { background: var(--ae-encre); color: var(--ae-papier); }
+.ae-btn--fantome { background: transparent;     color: var(--ae-encre); }
+.ae-btn--accent  { background: var(--ae-ocre);  color: var(--ae-encre); border-color: var(--ae-ocre); }
+.ae-btn--accent:hover { background: var(--ae-ocre-fonce); border-color: var(--ae-ocre-fonce); color: var(--ae-papier); }
+.ae-btn--fantome:hover{ background: var(--ae-encre); color: var(--ae-papier); }
+
+/* --- BASE DOCUMENT (optionnelle) ------------------------------------------
+   Décommente le bloc si tu veux que le fichier pose aussi le fond et le
+   texte par défaut de la page.
+.ae-base, body.ae-base {
+  background: var(--ae-papier);
+  color: var(--ae-encre);
+  font-family: var(--ae-font-corps);
+  font-weight: var(--ae-poids-corps);
+  line-height: var(--ae-interligne);
+  -webkit-font-smoothing: antialiased;
+}
+*/
+
+/* ============================================================================
+   ÉQUIVALENT TAILWIND (à coller dans tailwind.config.js si tu utilises Tailwind)
+   ----------------------------------------------------------------------------
+   theme: {
+     extend: {
+       colors: {
+         papier:  '#F7F4EE',
+         papier2: '#EFEAE1',
+         encre:   '#1C1A17',
+         encre60: '#5A554E',
+         ocre:    '#B68A3E',
+         ocreD:   '#9A7330',
+       },
+       fontFamily: {
+         display: ['Fraunces', 'serif'],
+         corps:   ['Hanken Grotesk', 'sans-serif'],
+         mono:    ['Space Mono', 'monospace'],
+       },
+       borderRadius: { none: '0px' },
+     },
+   }
+   ============================================================================ */
