@@ -39,11 +39,11 @@
   --ae-ocre-soft:     rgb(var(--ae-ocre-rgb) / .14);   /* halo / fond léger */
 
   /* --- TYPOGRAPHIE -------------------------------------------------------- */
-  --ae-font-display:  "Fraunces", Georgia, "Times New Roman", serif;
+  --ae-font-display:  "Gambetta", Georgia, "Times New Roman", serif;
   --ae-font-corps:    "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --ae-font-mono:     "Space Mono", ui-monospace, "SFMono-Regular", monospace;
 
-  --ae-poids-display: 340;      /* Fraunces : volontairement léger            */
+  --ae-poids-display: 300;      /* Gambetta Light : volontairement léger      */
   --ae-poids-corps:   400;
   --ae-poids-corps-md:500;
   --ae-poids-mono:    700;
@@ -148,7 +148,7 @@
          ocreD:   '#9A7330',
        },
        fontFamily: {
-         display: ['Fraunces', 'serif'],
+         display: ['Gambetta', 'serif'],
          corps:   ['Hanken Grotesk', 'sans-serif'],
          mono:    ['Space Mono', 'monospace'],
        },
