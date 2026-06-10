@@ -71,7 +71,7 @@ em{font-style:italic}
   border-bottom:1px solid var(--hair);
 }
 .wordmark{font-family:"Gambetta",serif;font-weight:300;font-size:1.4rem;letter-spacing:.01em}
-.nav__links{display:flex;gap:30px}
+.nav__links{display:flex;gap:30px;position:absolute;left:50%;transform:translateX(-50%)}
 .nav__links a{
   font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
   position:relative;padding:4px 0;color:var(--encre);
@@ -167,7 +167,7 @@ em{font-style:italic}
 
 /* indice de défilement */
 .intro__scroll{
-  position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;
+  position:absolute;left:0;right:0;bottom:26px;z-index:2;
   display:flex;flex-direction:column;align-items:center;gap:10px;
   color:rgb(var(--ae-papier-rgb) / .6);
 }
