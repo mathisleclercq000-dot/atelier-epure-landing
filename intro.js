@@ -13,13 +13,18 @@
   var canvas = document.getElementById("intro-canvas");
   if (!canvas) return;
 
-  var section = canvas.closest(".intro") || canvas.parentElement;
+  // Canvas fixe plein écran : la nébuleuse est un fond persistant, révélé
+  // seulement à travers les sections sombres (« fenêtres »).
+  var intro = document.querySelector(".intro");
+  // Fenêtres qui laissent voir la nébuleuse.
+  var windows = document.querySelectorAll(".intro, .works, .cta, .footer");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var gl = canvas.getContext("webgl2", { antialias: false, alpha: false });
 
-  // Pas de WebGL2 → on bascule sur la nébuleuse CSS statique, le texte reste lisible.
+  // Pas de WebGL2 → nébuleuse CSS statique, le texte reste lisible.
   if (!gl) {
-    section.classList.add("intro--nogl");
+    if (intro) intro.classList.add("intro--nogl");
+    document.documentElement.classList.add("nebula--nogl");
     return;
   }
 
@@ -76,7 +81,8 @@
   gl.linkProgram(program);
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
     console.error("Atelier Épure — program:", gl.getProgramInfoLog(program));
-    section.classList.add("intro--nogl");
+    if (intro) intro.classList.add("intro--nogl");
+    document.documentElement.classList.add("nebula--nogl");
     return;
   }
 
@@ -96,9 +102,10 @@
 
   function resize() {
     // Demi-DPR : assez net, et deux fois moins de pixels à calculer.
+    // Canvas dimensionné au viewport (il est position:fixed).
     var dpr = Math.max(1, 0.5 * (window.devicePixelRatio || 1));
-    var w = section.clientWidth || window.innerWidth;
-    var h = section.clientHeight || window.innerHeight;
+    var w = window.innerWidth;
+    var h = window.innerHeight;
     canvas.width = Math.max(1, Math.floor(w * dpr));
     canvas.height = Math.max(1, Math.floor(h * dpr));
     gl.viewport(0, 0, canvas.width, canvas.height);
@@ -140,28 +147,40 @@
     rafId = null;
   }
 
-  // On ne peint que quand l'intro est à l'écran (économie batterie/CPU).
+  // On ne peint que quand AU MOINS UNE fenêtre sombre est à l'écran
+  // (intro, réalisations, CTA, footer) — économie batterie/CPU.
+  function anyWindowVisible() {
+    for (var i = 0; i < windows.length; i++) {
+      var r = windows[i].getBoundingClientRect();
+      if (r.bottom > 0 && r.top < window.innerHeight) return true;
+    }
+    return false;
+  }
+
   if ("IntersectionObserver" in window) {
+    var visible = [];
     var io = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) start();
-          else stop();
+          var idx = visible.indexOf(e.target);
+          if (e.isIntersecting) {
+            if (idx === -1) visible.push(e.target);
+          } else if (idx !== -1) {
+            visible.splice(idx, 1);
+          }
         });
+        if (visible.length) start();
+        else stop();
       },
       { threshold: 0 }
     );
-    io.observe(section);
+    for (var i = 0; i < windows.length; i++) io.observe(windows[i]);
   } else {
     start();
   }
 
   document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      stop();
-    } else {
-      var r = section.getBoundingClientRect();
-      if (r.bottom > 0 && r.top < window.innerHeight) start();
-    }
+    if (document.hidden) stop();
+    else if (anyWindowVisible()) start();
   });
 })();

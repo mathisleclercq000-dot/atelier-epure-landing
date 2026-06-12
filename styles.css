@@ -23,9 +23,9 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:#0b0a09}
 body{
-  background:var(--papier);
+  background:transparent;
   color:var(--encre);
   font-family:"Hanken Grotesk",system-ui,sans-serif;
   font-weight:400;
@@ -36,6 +36,9 @@ body{
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 em{font-style:italic}
+
+/* ---- nébuleuse persistante : bandes papier opaques par-dessus le fond fixe ---- */
+.nebula-paper{position:relative;z-index:1;background:var(--papier)}
 
 /* ---- utilitaires ---- */
 .mono{
@@ -107,12 +110,12 @@ em{font-style:italic}
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;
   padding:clamp(96px,18vh,210px) var(--pad) clamp(80px,12vh,130px);
-  background:#0b0a09;                 /* noir chaud, visible le temps que le canvas peigne */
+  background:transparent;             /* la nébuleuse fixe est révélée derrière */
   color:var(--papier);
   overflow:hidden;
 }
 #intro-canvas{
-  position:absolute;inset:0;z-index:0;
+  position:fixed;inset:0;z-index:-1;
   width:100%;height:100%;display:block;
 }
 /* voile : assoit le texte sur la nébuleuse, vignette les bords */
@@ -349,8 +352,8 @@ em{font-style:italic}
 .svc__arrow{font-size:1.4rem;transform:translateX(-12px);opacity:0;transition:.4s var(--ease);text-align:right}
 
 /* =================== [03] RÉALISATIONS (sombre) =================== */
-.works{background:var(--encre);color:var(--papier);padding-bottom:clamp(60px,9vw,120px);
-  border-block:1px solid var(--encre)}
+.works{background:rgba(11,10,9,.74);color:var(--papier);padding-bottom:clamp(60px,9vw,120px);
+  border-block:1px solid rgba(11,10,9,.6)}
 .works .section-head{padding-top:clamp(70px,11vw,140px)}
 .works__intro{
   max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);
@@ -451,7 +454,7 @@ em{font-style:italic}
 .qa[open] summary .serif{color:var(--accent-strong)}
 
 /* =================== CTA FINAL =================== */
-.cta{background:var(--encre);color:var(--papier);overflow:hidden}
+.cta{background:rgba(11,10,9,.58);color:var(--papier);overflow:hidden}
 .marquee--cta{background:transparent;border-color:var(--hair-light);padding:20px 0}
 .marquee--cta .marquee__track{font-family:"Gambetta",serif;text-transform:none;letter-spacing:-.01em;
   font-size:clamp(2rem,6vw,5rem);font-weight:300;gap:40px;color:var(--papier)}
@@ -470,7 +473,7 @@ em{font-style:italic}
 .cta .btn-ghost:hover{color:var(--encre)}
 
 /* =================== FOOTER =================== */
-.footer{background:var(--encre);color:var(--papier);padding-bottom:40px}
+.footer{background:rgba(11,10,9,.86);color:var(--papier);padding-bottom:40px}
 .footer__marquee{overflow:hidden;white-space:nowrap;border-top:1px solid var(--hair-light);
   padding:clamp(20px,3vw,40px) 0}
 .footer__big{font-family:"Gambetta",serif;font-weight:300;font-size:clamp(4rem,15vw,13rem);

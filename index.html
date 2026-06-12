@@ -20,6 +20,9 @@
 </head>
 <body>
 
+<!-- =================== NÉBULEUSE PERSISTANTE (fond WebGL fixe) =================== -->
+<canvas id="intro-canvas" class="nebula" aria-hidden="true"></canvas>
+
 <!-- =================== CURSEUR / GRAIN =================== -->
 <div class="grain" aria-hidden="true"></div>
 
@@ -39,7 +42,6 @@
 
 <!-- =================== HERO D'INTRO (fond WebGL — nébuleuse) =================== -->
 <section class="intro" id="accueil" aria-label="Atelier Épure — introduction">
-  <canvas id="intro-canvas" aria-hidden="true"></canvas>
 
   <div class="intro__inner">
     <p class="intro__badge mono">
@@ -71,6 +73,7 @@
 
 <!-- =================== CE QU'ATELIER ÉPURE APPORTE =================== -->
 <main id="top">
+<div class="nebula-paper">
 <section class="benefits" id="hero">
   <p class="benefits__eyebrow mono reveal">Studio · Sites de restaurants · Bruxelles, BE</p>
   <h2 class="benefits__title reveal">Ce qu'un site Atelier Épure<br>apporte à <em>votre restaurant</em>.</h2>
@@ -213,6 +216,7 @@
     </li>
   </ul>
 </section>
+</div><!-- /nebula-paper (groupe 1) -->
 
 <!-- =================== [03] RÉALISATIONS (sombre) =================== -->
 <section class="works" id="realisations">
@@ -267,6 +271,7 @@
 </section>
 
 <!-- =================== [04] TARIFS =================== -->
+<div class="nebula-paper">
 <section class="tarifs" id="tarifs">
   <div class="section-head">
     <span class="num mono">[04]</span>
@@ -417,6 +422,7 @@
     </details>
   </div>
 </section>
+</div><!-- /nebula-paper (groupe 2) -->
 
 <!-- =================== CTA FINAL =================== -->
 <section class="cta" id="contact">
