@@ -73,7 +73,11 @@ em{font-style:italic}
   padding-top:12px;padding-bottom:12px;
   border-bottom:1px solid var(--hair);
 }
-.wordmark{font-family:"Gambetta",serif;font-weight:300;font-size:1.4rem;letter-spacing:.01em}
+.nav__brand{display:inline-flex;align-items:center;gap:13px}
+.nav__mark{display:block;width:46px;height:46px;flex:0 0 auto;
+  color:var(--encre);transition:color .4s var(--ease)}
+.nav.is-ontop-dark .nav__mark{color:var(--papier)}
+.wordmark{font-family:"Gambetta",serif;font-weight:300;font-size:1.78rem;letter-spacing:.01em}
 .nav__links{display:flex;gap:30px;position:absolute;left:50%;transform:translateX(-50%)}
 .nav__links a{
   font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
@@ -85,8 +89,8 @@ em{font-style:italic}
 }
 .nav__links a:hover::after{width:100%}
 .nav__cta{
-  display:inline-flex;align-items:center;gap:9px;color:var(--encre);
-  border:1px solid var(--encre);padding:9px 16px;border-radius:var(--r);
+  display:inline-flex;align-items:center;gap:11px;color:var(--encre);font-size:.82rem;
+  border:1px solid var(--encre);padding:13px 22px;border-radius:var(--r);
   transition:background .3s var(--ease),color .3s var(--ease);
 }
 .nav__cta .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);transition:transform .3s}
@@ -483,6 +487,7 @@ em{font-style:italic}
   display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
   border-top:1px solid var(--hair-light)}
 .footer__col{display:flex;flex-direction:column;gap:8px}
+.footer__mark{display:block;width:56px;height:56px;border-radius:12px;margin-bottom:6px}
 .footer__col .mono{color:rgba(247,244,238,.6)}
 .footer__col a:hover{color:var(--accent)}
 .footer__col--end{text-align:right}
